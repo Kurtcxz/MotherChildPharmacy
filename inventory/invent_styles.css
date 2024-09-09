@@ -1,54 +1,50 @@
 body {
     font-family: 'Catamaran', sans-serif;
   }
-  
-  .logo {
-    position: absolute;
-    top: 26px;
-    left: 20px;
-    width: 36px;
-    height: 36px;
-    border-radius: 0px;
-  }
-  
-  .main-text {
-    position: absolute;
-    top: 24px;
-    left: 72px;
-    width: 164px;
-    height: 28px;
-    font-family: Catamaran;
-    font-size: 18px;
-    line-height: 28px;
-    font-weight: 700;
-    color: #EB1C24FF; /* secondary-500 */
-  }
-  
-  .sub-text {
-    position: absolute;
-    top: 52px;
-    left: 72px;
-    width: 164px;
-    height: 20px;
-    font-family: Catamaran;
-    font-size: 12px;
-    line-height: 20px;
-    font-weight: 400;
-    color: #005500FF; /* primary-500 */
-  }
-  
-  .sidebar {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 258px;
-    height: 315px;
+/* Container 21 */
+.page {
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    width: 258px; 
+    height: 900px; 
     background: #FFFFFFFF; /* white */
-    border-radius: 0px;
-    box-shadow: 0px .2px 0px #171a1f;
+    border-radius: 0px; 
+    box-shadow: 0px 0px 1px #171a1f, 0px 0px 2px #171a1f; /* shadow-xs */
   }
-  
-  .sidebar-1 {
+
+/* Sidebar Logo */
+.logo {
+  position: absolute;
+  top: 26px;
+  left: 20px;
+  width: 36px;
+  height: 36px;
+}
+/* Main Text (Brand Name) */
+.main-text {
+  position: absolute;
+  top: 24px;
+  left: 72px;
+  font-family: 'Catamaran', sans-serif; /* Body */
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+  color: #EB1C24FF; /* secondary-500 */
+}
+
+/* Sub Text (Tagline) */
+.sub-text {
+  position: absolute;
+  top: 52px;
+  left: 72px;
+  font-family: 'Catamaran', sans-serif; /* Body */
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #005500FF; /* primary-500 */
+}
+.sidebar-1 {
     position: absolute;
     top: 0px;
     left: 0px;
@@ -77,402 +73,431 @@ body {
     border-radius: 0px;
     box-shadow: 0px 0px 1px #171a1f;
   }
-  
-  .sidebar-menu {
+
+/* Sidebar Menu Section */
+.sidebar-menu {
+  top: 60px; /* Adjusted to clear logo and text */
+  left: 0px;
+  width: 258px;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF; /* Background color for the sidebar */
+  padding: 30px 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow for the sidebar */
+}
+
+/* Sidebar Menu Items */
+.sidebar-menu .sidebar-menu-item {
+  padding: 16px 20px; /* Adjusted padding for consistency */
+  display: flex;
+  align-items: center;
+  color: #565D6D; /* neutral-600 */
+  background: transparent;
+  border-radius: 4px;
+  gap: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Sidebar Menu Item Link */
+.sidebar-menu .sidebar-menu-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px;
+}
+
+/* Sidebar Menu Icons */
+.sidebar-menu .sidebar-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+/* Selected Sidebar Menu Item */
+.sidebar-menu .sidebar-menu-item.selected {
+  position: relative;
+  font-weight: 700;
+  color: #005500; /* primary-500 */
+  background: #E6FFE6; /* A light shade for selected item */
+}
+
+/* Selected Item Indicator */
+.sidebar-menu .sidebar-menu-item.selected .indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #005500; /* primary-500 */
+}
+
+/* Hover Effect for Sidebar Menu Item */
+.sidebar-menu .sidebar-menu-item:hover {
+  background: #F0F0F0; /* Slight hover effect */
+}
+
+
+/* Container 25 */
+.dash-info{
     position: absolute; 
-    top: 84px; 
-    right: 91px;
-    height: 184px; 
-    display: flex; 
-    flex-direction: column; 
-    font-family: Catamaran; /* Body */
-    font-size: 14px; 
-    line-height: 22px; 
-    font-weight: 400; 
-    opacity: 1; 
-    background: rgba(255, 255, 255, 0); /* Transparent background */
-  }
-  
-  .sidebar-menu-item .sidebar-icon {
-    margin-top: -5px; 
-  }
-  
-  .sidebar-menu-item {
-    position: relative; /* Needed for the indicator positioning */
-    display: flex;
-    align-items: center;
-    padding: 16px;
-    color: #565D6DFF; /* neutral-600 */
-    background: rgba(255, 255, 255, 0); /* Transparent background */
-    border-radius: 0px;
-    gap: 12px; /* Space between icon and text */
-    cursor: pointer;
-    white-space: nowrap;
-  }
-  
-  .sidebar-menu-item a {
-    display: flex; /* Ensure anchor tag uses flexbox */
-    align-items: center; /* Center items vertically */
-    text-decoration: none;
-    color: inherit;
-    gap: 8px; /* Space between icon and text */
-  }
-  
-  .sidebar-menu-item.selected {
-    font-weight: 700;
-    color: #005500FF; /* primary-500 */
-    background: #FFFFFF; /* transparent */
-  }
-  
-  .sidebar-menu-item.selected:hover:active {
-    color: #005500FF; /* primary-500 */
-    background: #FFFFFF; /* transparent */
-  }
-  
-  .sidebar-menu-item .indicator {
-    position: absolute;
-    left: 0; /* Position indicator on the leftmost side */
-    width: 4px; 
-    height: 80%;
-    opacity: 0; /* Hide by default */
-  }
-  
-  .sidebar-menu-item.selected .indicator {
-    opacity: 1; /* Show only for selected item */
-  }
-  
-  
-  .dash-info {
-    position: absolute;
-    top: 0px;
-    left: 259px;
-    width: 1164px;
-    height: 84px;
+    top: 0px; 
+    left: 258px; 
+    /* 1182px */
+    width: 1182px; 
+    height: 84px; 
     background: #FFFFFFFF; /* white */
-    border-radius: 0px;
+    border-radius: 0px; 
     box-shadow: 0px 0px 1px #171a1f, 0px 0px 2px #171a1f; /* shadow-xs */
   }
-  
   .dash_text {
-    position: absolute;
-    left: 22px;
-    font-family: Catamaran;
-    font-size: 25px;
-    line-height: 48px;
-    font-weight: 700;
+    position: absolute; 
+    top: 1px; 
+    left: 22px; 
+    font-family: Catamaran; /* Body */
+    font-size: 32px; 
+    line-height: 48px; 
+    font-weight: 700; 
     color: #171A1FFF; /* neutral-900 */
   }
-  
-  .user-name {
-    position: absolute;
-    top: 27px;
-    left: 925px;
-    font-family: Catamaran;
-    font-size: 15px;
-    line-height: 30px;
-    font-weight: 400;
-    color: #171A1FFF; /* neutral-900 */
-  }
-  
-  .avatar {
-    position: absolute;
-    top: 15px;
-    left: 1090px;
-    width: 50px;
-    height: 50px;
-    background: #86FF86FF; /* primary-200 */
-    opacity: 1;
-    overflow: hidden;
-    border-radius: 32px;
-  }
-  
-  .customers {
-    position: absolute;
-    top: 106px;
-    left: 280px;
-    width: 250px;
-    height: 200px;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Catamaran;
-    font-size: 100px;
-    line-height: 130px;
-    font-weight: 400;
+/* Button Style */
+.button {
+  position: absolute;
+  top: 25px;
+  left: 185px;
+  height: 36px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Catamaran', sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #FFFFFFFF; /* white */
+  background: #005500FF; /* primary-500 */
+  border: none;
+  border-radius: 2px; /* border-m */
+  cursor: pointer;
+}
+  /* Hover */
+  .button:hover {
     color: #FFFFFFFF; /* white */
-    background: #005500FF; /* primary-500 */
-    opacity: 1;
-    border: none;
-    border-radius: 2px; /* border-m */
-    gap: 8px;
+    background: #004200FF; /* primary-650 */
   }
-  
-  .customers .icon {
-    width: 100px;
-    height: 100px;
-    fill: #FFFFFFFF; /* white */
+  /* Pressed */
+  .button:hover:active {
+    color: #FFFFFFFF; /* white */
+    background: #002D00FF; /* primary-800 */
   }
-  
-  .receipt {
-    position: absolute;
-    top: 106px;
-    left: 696px;
-    width: 250px;
-    height: 200px;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Catamaran;
-    font-size: 100px;
-    line-height: 130px;
-    font-weight: 400;
-    color: #0A4D20FF; /* success-800 */
-    background: #1DD75BFF; /* success-500 */
-    opacity: 1;
-    border: none;
-    border-radius: 2px; /* border-m */
-    gap: 8px;
+  /* Disabled */
+  .button:disabled {
+    opacity: 0.4; 
   }
-  
-  .receipt .icon {
-    width: 100px;
-    height: 100px;
-    fill: #0A4D20FF; /* success-800 */
-  }
-  
-  .stocks {
-    position: absolute;
-    top: 106px;
-    left: 1112px;
-    width: 250px;
-    height: 200px;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Catamaran;
-    font-size: 100px;
-    line-height: 130px;
-    font-weight: 400;
-    color: #5D4108FF; /* warning-800 */
-    background: #EFB034FF; /* warning-500 */
-    opacity: 1;
-    border: none;
-    border-radius: 2px; /* border-m */
-    gap: 8px;
-  }
-  
-  .stocks .icon {
-    width: 100px;
-    height: 100px;
-    fill: #5D4108FF; /* warning-800 */
-  }
-  
-  .chart-container {
-    position: absolute;
-    top: 325px;
-    left: 280px;
-    width: 1132px;
-    height: 518px;
-    background: #FFFFFFFF; /* white */
-    border-radius: 2px; /* border-m */
-    box-shadow: 0px 0px 1px #171a1f, 0px 0px 2px #171a1f; /* shadow-xs */
-  }
-  
-  .dropdown {
+
+/* User Name Text */
+.user-name {
     position: absolute; 
-    top: 14px; 
-    left: 14px; 
-    opacity: 1; 
-  }
-  .dropdown input {
-    width: 192px; 
-    height: 36px; 
-    padding-left: 12px; 
-    padding-right: 34px; 
-    font-family: Catamaran; 
-    font-size: 14px; 
-    line-height: 22px; 
-    font-weight: 400; 
-    color: #171A1FFF; /* neutral-900 */
-    background: #FFFFFFFF; /* white */
-    border-radius: 2px; /* border-m */
-    border-width: 1px; 
-    border-color: #BDC1CAFF; /* neutral-400 */
-    outline: none; 
-  }
-  
-  .rate-container {
-    position: absolute; 
-    top: 74px; 
-    left: 315px; 
-    width: 239px; 
-    height: 60px; 
-    background: #EBFFEBFF; /* primary-100 */
-    border-radius: 2px; /* border-m */
-    box-shadow: 0px 6px 13px #ebffeb, 0px 0px 2px #ebffeb; /* shadow-l */
-  }
-  
-  .peso-text {
-    position: absolute; 
-    top: 16px; 
-    left: 32px; 
+    top: 27px; 
+    left: 852px; 
+    width: 216px; 
+    height: 90px; 
     font-family: Catamaran; /* Body */
     font-size: 20px; 
     line-height: 30px; 
-    font-weight: 600; 
-    color: #005500FF; /* primary-500 */
-  }
-  
-  .rate-text {
-    position: absolute; 
-    top: 16px; 
-    left: 48px; 
-    font-family: Catamaran; /* Body */
-    font-size: 18px; 
-    line-height: 28px; 
-    font-weight: 700; 
+    font-weight: 400; 
     color: #171A1FFF; /* neutral-900 */
   }
-  
-  .tag {
+
+/* User Avatar */
+.avatar {
+  width: 64px;
+  height: 64px;
+  margin-left: 10px;
+  background: #86FF86FF; /* primary-200 */
+  border-radius: 32px;
+  overflow: hidden;
+}
+/* Avatar 10 */
+.avatar {
     position: absolute; 
-    top: 16px; 
-    left: 181px; 
-    width: 47px; 
-    height: 28px; 
+    top: 10px; 
+    left: 1090px; 
+    width: 64px; 
+    height: 64px; 
+    background: #86FF86FF; /* primary-200 */
+    opacity: 1; 
+    overflow: hidden; 
+    border-radius: 32px; 
+  }
+  .avatar img {
+    width: 64px; 
+    height: 64px; 
+  }
+  .avatar .badge {
+    width: 16px; 
+    height: 16px; 
+    border-radius: 8px; 
+  }
+  .avatar.active .badge {
+    background: #000000FF; /* transparent */
+    opacity: 0; 
+    border-width: 1.5px; 
+    border-color: #FFFFFFFF; 
+  }
+  .avatar.inactive .badge {
+    background: #000000FF; /* transparent */
+    opacity: 0; 
+    border-width: 1.5px; 
+    border-color: #FFFFFFFF; 
+  }
+  .avatar.idle .badge {
+    background: #000000FF; /* transparent */
+    opacity: 0; 
+    border-width: 1.5px; 
+    border-color: #FFFFFFFF; 
+  }
+  .avatar.do_not_disturb .badge {
     display: flex; 
     align-items: center; 
-    justify-content: space-between; 
-    font-family: Catamaran; /* Body */
-    font-size: 12px; 
-    line-height: 20px; 
-    font-weight: 400; 
-    opacity: 1; 
+    justify-content: center; 
+    font-size: 16px; 
+    line-height: 16px; 
+    color: #FFFFFFFF; /* white */
+    background: #000000FF; /* transparent */
+    opacity: 0; 
+    border-width: 1.5px; 
+    border-color: #FFFFFFFF; 
   }
-  
-  .perc-container {
-    position: absolute; 
-    top: 74px; 
-    left: 578px; 
-    width: 239px; 
-    height: 60px; 
-    background: #EEFDF3FF; /* success-100 */
-    border-radius: 2px; /* border-m */
-    box-shadow: 0px 6px 13px #eefdf3, 0px 0px 2px #eefdf3; /* shadow-l */
-  }
-  
-  .perc-container .icon {
-    position: absolute; 
-    top: 18px; 
-    left: 16px; 
-    width: 24px; 
-    height: 24px; 
-    fill: #0E642AFF; /* success-750 */
-  }
-  
-  .perc-text {
-    position: absolute; 
-    top: 16px; 
-    left: 48px; 
-    font-family: Catamaran; /* Body */
-    font-size: 18px; 
-    line-height: 28px; 
-    font-weight: 700; 
+/*TABLE 1 PRODUCTSS*/
+
+/* Table 1 */
+
+/* Updated Table Styles */
+.product-table {
+    position: absolute;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.product-table th, .product-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 16px;
     color: #171A1FFF; /* neutral-900 */
-  }
+}
+
+.product-table th {
+    font-weight: 700;
+    color: #171A1FFF; /* neutral-900 */
+}
+
+.product-table td {
+    font-weight: 400;
+    color: #565D6DFF; /* neutral-600 */
+}
+
+.product-icon {
+    width: 50px; /* Adjust size as necessary */
+    height: auto;
+}
+
+.product-table tbody tr.low-stock {
+    background-color: #ffe6e6; /* Light red background for low stock */
+}
+
+.product-table tbody tr td small {
+    font-size: 14px;
+    color: #888888; /* Grey for secondary text */
+}
+
+.product-table tbody tr td:nth-child(3) {
+    text-align: center; /* Center align quantity */
+}
+
+.product-table tbody tr td:nth-child(4) {
+    font-weight: 700; /* Bold for status */
+}
+.product-table tbody tr td:nth-child(4):before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.product-table tbody tr td:nth-child(4):before {
+    background-color: #eb1c24; /* Red for low stock */
+}
+
+.product-table tbody tr td:nth-child(4):before {
+    background-color: #28a745; /* Green for good stock */
+}
+#PurchaseForm {
   
-  .tag {
-    position: absolute; 
-    top: 16px; 
-    left: 146px; 
-    width: 79px; 
-    height: 28px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    font-family: Catamaran; /* Body */
-    font-size: 12px; 
-    line-height: 20px; 
-    font-weight: 400; 
-    opacity: 1; 
-  }
-  
-  .text-1 {
-    position: absolute; 
-    top: 474px; 
-    left: 24px; 
-    font-family: Catamaran; /* Body */
-    font-size: 12px; 
-    line-height: 20px; 
-    font-weight: 400; 
-    color: #6F7787FF; /* neutral-550 */
-  }
-  
-  .text-2 {
-    position: absolute; 
-    top: 474px; 
-    left: 191px; 
-    font-family: Catamaran; /* Body */
-    font-size: 12px; 
-    line-height: 20px; 
-    font-weight: 400; 
-    color: #6F7787FF; /* neutral-550 */
-  }
-  
-  .text-3 {
-    position: absolute; 
-    top: 474px; 
-    left: 360px; 
-    font-family: Catamaran; /* Body */
-    font-size: 12px; 
-    line-height: 20px; 
-    font-weight: 400; 
-    color: #6F7787FF; /* neutral-550 */
-  }
-  
-  .text-4 {
-    position: absolute; 
-    top: 474px; 
-    left: 543px; 
-    font-family: Catamaran; /* Body */
-    font-size: 12px; 
-    line-height: 20px; 
-    font-weight: 400; 
-    color: #6F7787FF; /* neutral-550 */
-  }
-  
-  .text-5 {
-    position: absolute; 
-    top: 474px; 
-    left: 722px; 
-    font-family: Catamaran; /* Body */
-    font-size: 12px; 
-    line-height: 20px; 
-    font-weight: 400; 
-    color: #6F7787FF; /* neutral-550 */
-  }
-  
-  .text-6 {
-    position: absolute; 
-    top: 474px; 
-    left: 901px; 
-    font-family: Catamaran; /* Body */
-    font-size: 12px; 
-    line-height: 20px; 
-    font-weight: 400; 
-    color: #6F7787FF; /* neutral-550 */
-  }
-  
-  .text-7 {
-    position: absolute; 
-    top: 474px; 
-    left: 1038px; 
-    font-family: Catamaran; /* Body */
-    font-size: 12px; 
-    line-height: 20px; 
-    font-weight: 700; 
-    color: #005500FF; /* primary-500 */
-  }
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 20px;
+  z-index: 100;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 600px;
+}
+
+/* Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.h3 {
+  font-family: Catamaran; /* Body */
+  font-size: 20px; 
+  line-height: 30px; 
+  font-weight: 600; 
+  color: #005500FF; /* primary-500 */
+}
+
+
+/* Form Buttons */
+.form-button button {
+  width: 82px; 
+  height: 36px; 
+  padding: 0 12px; 
+  display: flex;
+  padding: 0px 12px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-family: Catamaran; 
+  font-size: 14px; 
+  line-height: 22px; 
+  font-weight: 400; 
+  color: #FFFFFFFF; /* white */
+  background: #005500FF; /* primary-500 */
+  opacity: 1; 
+  border: none; 
+  border-radius: 4px; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.form-button #cancelBtn {
+  background-color: #f44336;
+}
+
+.form-button #saveBtn {
+  background-color: #4CAF50;
+}
+.form-button {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+
+.textbox input:hover {
+  color: #171A1FFF; /* neutral-900 */
+  background: #F3F4F6FF; /* neutral-200 */
+}
+/* focused */
+.textbox input:focused {
+  color: #171A1FFF; /* neutral-900 */
+  background: #FFFFFFFF; /* white */
+}
+/* disabled */
+.textbox input:disabled {
+  color: #171A1FFF; /* neutral-900 */
+  background: #F3F4F6FF; /* neutral-200 */
+}
+.textbox input {
+  width: 200px; 
+  height: 36px; 
+  padding-left: 12px; 
+  padding-right: 12px; 
+  font-family: Catamaran; 
+  font-size: 14px; 
+  line-height: 22px; 
+  font-weight: 400; 
+  background: #F3F4F6FF; /* neutral-200 */
+  border-radius: 4px; /* border-xl */
+  border-width: 0px; 
+  outline: none; 
+}
+.textbox .label {
+  font-family: Catamaran; 
+  font-size: 14px; 
+  line-height: 22px; 
+  font-weight: 700; 
+}
+/* hover */
+.textbox input:hover {
+  color: #171A1FFF; /* neutral-900 */
+  background: #F3F4F6FF; /* neutral-200 */
+}
+/* focused */
+.textbox input:focused {
+  color: #171A1FFF; /* neutral-900 */
+  background: #FFFFFFFF; /* white */
+}
+/* disabled */
+.textbox input:disabled {
+  color: #171A1FFF; /* neutral-900 */
+  background: #F3F4F6FF; /* neutral-200 */
+}
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+  fill: #171A1FFF; /* neutral-900 */
+}
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #aaa;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: black;
+  text-decoration: none;
+}
