@@ -4,25 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
-    <link rel="stylesheet" href="prod_styles.css">
+    <link rel="stylesheet" href="Prod_style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="client.js"></script>
+    <script src="Product.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body class="page">
     <div class="sidebar">
         <div class="sidebar-1"></div>
         <div class="sidebar-2"></div>
         <div class="sidebar-3"></div>
-        <img src="../resources/mnc_logo.png" alt="Mother & Child Logo" class="logo">
+        <img src="resources/mnc_logo.png" alt="Mother & Child Logo" class="logo">
         <span class="main-text">Mother & Child</span>
         <small class="sub-text">Pharmacy & Medical Supplies</small>
+        
         <ul class="sidebar-menu">
             <li class="sidebar-menu-item">
                 <a href="#">
-                    <img src="../resources/dashboard_icon.png" alt="Dashboard Icon" class="sidebar-icon">
+                    <img src="resources/dashboard_icon.png" alt="Dashboard Icon" class="sidebar-icon">
                     Dashboard
                 </a>
             </li>
@@ -36,7 +39,7 @@
             <li class="sidebar-menu-item">
                 <a href="#">
                     <img src="../resources/suppliers.png" alt="Suppliers Icon" class="sidebar-icon">
-                    Suppliers
+                    Supplies
                 </a>
             </li>
             <li class="sidebar-menu-item">
@@ -71,7 +74,7 @@
             </li>
             <li class="sidebar-menu-item">
                 <a href="#">
-                    <img src="../resources/logout.png" alt="Logout Icon" class="sidebar-icon">
+                    <img src="resources/logout.png" alt="Logout Icon" class="sidebar-icon">
                     Logout
                 </a>
             </li>
@@ -80,10 +83,226 @@
     <div class="dash-info">
         <h1 class="dash_text">Products</h1>
         <span class="user-name">Aileen Castro (Admin)</span>
-        <img src="../resources/profile_icon.png" alt="Aileen Castro" class="avatar">
-    </div>
-    <div class="main-content">
+        <img src="../resources/I1.jpg" alt="Aileen Castro" class="avatar">
+        
+        <div class="table">
+            <h4 class="Icon">Icon</h4>
+            <h4 class="Name">Name</h4>
+            <h4 class="Quantity">Quantity</h4>
+            <h4 class="Status">Price</h4>
+        </div>
 
+        
+        <button id="addProductBtn">+</button>
+        <button id="deleteProduct" class="deleteProduct">
+        <img src="../resources/Trashh.png" alt="Delete Product" style="width: 20px; height: 20px;">
+        </button>
+       
+
+              <div id="productForm" class="modal">
+                <div class="modal-content">
+                    <h2>Add New Product</h2>
+                
+                <hr style="margin-top: 30px;">
+
+                    <div class="form-section">
+                        <h3>Basic Information</h3>
+                        <div class="textbox">
+                            <label style="margin-right: 200px;" for="brandname">Brand Name</label>
+                            <label for="genericName">Generic Name</label>
+                        </div>
+            
+                        <div class="textbox">
+                            
+                            <input style="margin-right: 30px;" type="text" id="brandname" name="brandname" >
+                            <input type="text" id="genericName" name="genericName" >
+                        </div>
+            
+                        <div class="textbox">
+                            <label style="margin-right: 195px;" for="productcode">Product Code</label>
+                            <label for="barcode">Barcode</label>
+                        </div>
+                        
+            
+                        <div class="textbox">
+                            
+                            <input style="margin-right: 30px;" type="text" id="productcode" name="productcode">
+                            <input type="text" id="barcode" name="barcode">
+                        </div>
+
+                        <div>
+                            <label style="margin-right: 218px;" for="priceperunit">Item Type</label>
+                            <label  for="priceperunit">Unit of Measure</label>
+                        </div>
+                        <div class="textbox">
+                            <input style="margin-right: 30px;" type="text" id="itemtype" name="itemtype">
+                            <input type="text" id="unitofmeasure" name="unitofmeasure">
+                        </div>
+
+                        <div>
+                            <label for="mass">Mass</label>
+                        </div>
+                        <div class="textbox">
+                            <input type="text" id="mass" name="mass">
+                        </div>
+
+                        <hr style="margin-top: 30px;">
+                        <div class="textbox">
+                            <label  for="icon">Icon</label>
+                            <div class="icon-upload">
+                                <img  id="iconPreview" src="../resources/default_icon.png" alt="Icon Preview" class="icon-preview">
+                                <label for="iconFile" class="icon-label">+</label>
+                                <input  type="file" id="iconFile" accept="image/*" style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+                    <hr style="margin-top: 30px;">
+                    <div class="form-section">
+                        <h3>Sale Information</h3>
+                        <div class="textbox">
+                            <label style="margin-right: 250px;" for="price">Price</label>
+                            <label for="quantity">Quantity (No. of Boxes)</label>
+                            
+                        </div>
+            
+                        <div class="textbox">
+                            <input style="margin-right: 30px;" type="text" id="price" name="price" placeholder="₱">
+                            <input type="text" id="quantity" name="quantity">
+                        </div>
+
+                        <div>
+                            <label for="priceperunit">Price Per Unit</label>
+                        </div>
+                        <div class="textbox">
+                            <input type="text" id="priceperunit" name="priceperunit">
+                        </div>
+                    </div>
+            
+                    <div class="form-buttons">
+                        <button id="cancelBtn">Cancel</button>
+                        <button id="saveBtn">Save</button>
+                    </div>
+                </div>
+            </div>
+
+       
+            <table id="productTable" class="product-table" style="margin-top: 20px;">
+            
+            <tbody id="productTableBody">
+                
+            </tbody>
+        </table>
     </div>
+    
+    <script>
+    
+
+    document.getElementById("addProductBtn").onclick = function() {
+    document.getElementById("productForm").style.display = "block";
+    };
+
+    document.getElementById("cancelBtn").onclick = function() {
+        document.getElementById("productForm").style.display = "none";
+    };
+
+    document.getElementById("saveBtn").onclick = function() {
+        const brandname = document.getElementById("brandname").value;
+        const genericName = document.getElementById("genericName").value;
+        const productcode = document.getElementById("productcode").value;
+        const barcode = document.getElementById("barcode").value;
+        const price = document.getElementById("price").value;
+        const quantity = document.getElementById("quantity").value;
+        const iconFile = document.getElementById("iconFile").files[0];
+
+        if (!brandname || !genericName || !productcode || !barcode || !price || !quantity || !iconFile) {
+            alert("Please fill in all fields.");
+            return;
+        }
+        
+        document.getElementById("productTable").style.marginTop = "80px"; // Adjust this value as needed
+        const table = document.getElementById("productTable").getElementsByTagName('tbody')[0];
+        const newRow = table.insertRow();
+
+       // Create a cell for the icon
+        const iconCell = newRow.insertCell(0);
+        if (iconFile) {
+            const iconURL = URL.createObjectURL(iconFile);
+            const iconImg = document.createElement("img");
+            iconImg.src = iconURL;
+            iconImg.alt = "Product Icon";
+            iconImg.style.maxWidth = "80px"; // Adjusted size, sets the maximum width
+            iconImg.style.maxHeight = "80px"; // Adjusted size, sets the maximum height
+            iconImg.style.width = "auto"; // Maintain aspect ratio
+            iconImg.style.height = "auto"; // Maintain aspect ratio
+            iconImg.style.objectFit = "cover"; // Ensure the image covers the area without distortion
+            iconImg.style.display = "block"; // Ensure the image takes up its space properly
+            iconImg.style.margin = "0 auto"; // Center the image within the cell
+            iconCell.style.textAlign = "center"; // Center the cell content
+            iconCell.style.verticalAlign = "middle"; // Center the image vertically in the cell
+            iconCell.style.minHeight = "80px"; // Ensure the cell is tall enough to fit the image
+            iconCell.appendChild(iconImg);
+        } else {
+            iconCell.textContent = "No Icon";
+        }
+
+        // Optionally, you can set a minimum height for all rows in the table
+        const rows = document.querySelectorAll("#productTable tbody tr");
+        rows.forEach(row => {
+            row.style.minHeight = "80px"; // Ensure rows have a minimum height
+        });
+
+
+
+        /**/
+        
+        document.getElementById("addProductBtn").onclick = function() {
+            document.getElementById("productForm").style.display = "block";
+        };
+
+        // Function to handle the delete button click
+        document.getElementById("deleteProduct").onclick = function() {
+            alert("Please double-click on the row you want to delete.");
+            document.querySelectorAll("#productTable tbody tr").forEach(row => {
+                row.addEventListener("dblclick", function() {
+                    if (confirm("Are you sure you want to delete this row?")) {
+                        this.remove();
+                    }
+                }, { once: true }); // Ensure the event listener is only active once
+            });
+        };
+        
+        newRow.insertCell(1).textContent = brandname;
+        // newRow.insertCell(2).textContent = genericName;
+        // newRow.insertCell(3).textContent = productcode;
+        // newRow.insertCell(4).textContent = barcode;
+        newRow.insertCell(2).textContent = quantity;
+        newRow.insertCell(3).textContent = price;
+
+        // Clear form inputs
+        document.getElementById("brandname").value = "";
+        document.getElementById("genericName").value = "";
+        document.getElementById("productcode").value = "";
+        document.getElementById("barcode").value = "";
+        document.getElementById("price").value = "";
+        document.getElementById("quantity").value = "";
+        document.getElementById("iconFile").value = "";
+
+        document.getElementById("productForm").style.display = "none";
+
+        alert("Product Saved!");
+    };
+
+    document.getElementById("iconFile").addEventListener("change", function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById("iconPreview").src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
 </body>
 </html>
+
