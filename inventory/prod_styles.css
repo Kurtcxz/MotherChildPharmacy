@@ -1,187 +1,526 @@
 body {
-    font-family: 'Catamaran', sans-serif;
-  }
-  
-  .logo {
-    position: absolute;
-    top: 26px;
-    left: 20px;
-    width: 36px;
-    height: 36px;
-    border-radius: 0px;
-  }
-  
-  .main-text {
-    position: absolute;
-    top: 24px;
-    left: 72px;
-    width: 164px;
-    height: 28px;
-    font-family: Catamaran;
-    font-size: 18px;
-    line-height: 28px;
-    font-weight: 700;
-    color: #EB1C24FF; /* secondary-500 */
-  }
-  
-  .sub-text {
-    position: absolute;
-    top: 52px;
-    left: 72px;
-    width: 164px;
-    height: 20px;
-    font-family: Catamaran;
-    font-size: 12px;
-    line-height: 20px;
-    font-weight: 400;
-    color: #005500FF; /* primary-500 */
-  }
-  
-  .sidebar {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 258px;
-    height: 315px;
-    background: #FFFFFFFF; /* white */
-    border-radius: 0px;
-    box-shadow: 0px .2px 0px #171a1f;
-  }
-  
-  .sidebar-1 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 258px;
-    height: 475px;
-    border-radius: 0px;
-    box-shadow: 0px .2px 0px #171a1f;
-  }
-  
-  .sidebar-2 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 258px;
-    height: 585px;
-    border-radius: 0px;
-    box-shadow: 0px .2px 0px #171a1f;
-  }
-  
-  .sidebar-3 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 258px;
-    height: 1080px;
-    border-radius: 0px;
-    box-shadow: 0px 0px 1px #171a1f;
-  }
-  
-  .sidebar-menu {
-    position: absolute; 
-    top: 84px; 
-    right: 91px;
-    height: 184px; 
-    display: flex; 
-    flex-direction: column; 
-    font-family: Catamaran; /* Body */
-    font-size: 14px; 
-    line-height: 22px; 
-    font-weight: 400; 
-    opacity: 1; 
-    background: rgba(255, 255, 255, 0); /* Transparent background */
-  }
-  
-  .sidebar-menu-item .sidebar-icon {
-    margin-top: -5px; 
-  }
-  
-  .sidebar-menu-item {
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 16px;
-    color: #565D6DFF; /* neutral-600 */
-    background: rgba(255, 255, 255, 0); /* Transparent background */
-    border-radius: 0px;
-    gap: 12px; /* Space between icon and text */
-    cursor: pointer;
-    white-space: nowrap;
-  }
-  
-  .sidebar-menu-item a {
-    display: flex; /* Ensure anchor tag uses flexbox */
-    align-items: center; /* Center items vertically */
-    text-decoration: none;
-    color: inherit;
-    gap: 8px; /* Space between icon and text */
-  }
-  
-  .sidebar-menu-item.selected {
-    font-weight: 700;
-    color: #005500FF; /* primary-500 */
-    background: #FFFFFF; /* transparent */
-  }
-  
-  .sidebar-menu-item.selected:hover:active {
-    color: #005500FF; /* primary-500 */
-    background: #FFFFFF; /* transparent */
-  }
-  
-  .sidebar-menu-item .indicator {
-    position: absolute;
-    left: 0; /* Position indicator on the leftmost side */
-    width: 4px; 
-    height: 80%;
-    opacity: 0; /* Hide by default */
-  }
-  
-  .sidebar-menu-item.selected .indicator {
-    opacity: 1; /* Show only for selected item */
-  }
-  
-  
-  .dash-info {
-    position: absolute;
-    top: 0px;
-    left: 259px;
-    width: 1164px;
-    height: 84px;
-    background: #FFFFFFFF; /* white */
-    border-radius: 0px;
-    box-shadow: 0px 0px 1px #171a1f, 0px 0px 2px #171a1f; /* shadow-xs */
-  }
-  
+  font-family: 'Catamaran', sans-serif;
+}
+
+.page {
+  position: absolute; 
+  top: 0px; 
+  left: 0px; 
+  width: 258px; 
+  height: 900px; 
+  background: #FFFFFFFF; /* white */
+  border-radius: 0px; 
+  box-shadow: 0px 0px 1px #171a1f, 0px 0px 2px #171a1f; /* shadow-xs */
+}
+.logo {
+  position: absolute;
+  top: 26px;
+  left: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 0;
+}
+
+.main-text {
+  position: absolute;
+  top: 24px;
+  left: 72px;
+  width: 164px;
+  height: 28px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #EB1C24FF;
+}
+
+.sub-text {
+  position: absolute;
+  top: 52px;
+  left: 72px;
+  width: 164px;
+  height: 20px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #005500FF;
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 258px;
+  height: 100%;
+  background: #FFFFFF;
+  border-radius: 0;
+  box-shadow: 0 .2px 0 #171a1f;
+}
+
+
+.sidebar-menu {
+  position: absolute;
+  top: 60px; /* Adjusted to clear logo and text */
+  left: 0px;
+  width: 258px;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFFFF; /* Background color for the sidebar */
+  padding: 30px 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow for the sidebar */
+}
+
+.sidebar-menu-item {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  color: #565D6D;
+  background: transparent;
+  border-radius: px;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.sidebar-menu-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px;
+}
+
+.sidebar-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.sidebar-menu-item.selected {
+  font-weight: 700;
+  color: #768676;
+  background: #E6FFE6;
+}
+
+.sidebar-menu-item.selected .indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+}
+
+.sidebar-menu-item:hover {
+  background: #F0F0F0;
+}
+
+.dash-info {
+  position: absolute; 
+  top: 0px; 
+  left: 258px; 
+  width: 1182px; 
+  height: 84px; 
+  background: #FFFFFF; /* white */
+  border-radius: 0px; 
+  box-shadow: 0px 0px 1px #171a1f, 0px 0px 2px #171a1f; /* shadow-xs */
+  margin-bottom: 20px; /* Added margin-bottom */
+}
+
   .dash_text {
-    position: absolute;
-    left: 22px;
-    font-family: Catamaran;
-    font-size: 25px;
-    line-height: 48px;
-    font-weight: 700;
+    position: absolute; 
+    top: 1px; 
+    left: 22px; 
+    font-family: Catamaran; /* Body */
+    font-size: 32px; 
+    line-height: 48px; 
+    font-weight: 700; 
     color: #171A1FFF; /* neutral-900 */
   }
-  
+
   .user-name {
-    position: absolute;
-    top: 27px;
-    left: 925px;
-    font-family: Catamaran;
-    font-size: 15px;
-    line-height: 30px;
-    font-weight: 400;
+    position: absolute; 
+    top: 27px; 
+    left: 852px; 
+    width: 216px; 
+    height: 90px; 
+    font-family: Catamaran; /* Body */
+    font-size: 20px; 
+    line-height: 30px; 
+    font-weight: 400; 
     color: #171A1FFF; /* neutral-900 */
   }
-  
+
   .avatar {
-    position: absolute;
-    top: 15px;
-    left: 1090px;
-    width: 50px;
-    height: 50px;
+    position: absolute; 
+    top: 10px; 
+    left: 1090px; 
+    width: 64px; 
+    height: 64px; 
     background: #86FF86FF; /* primary-200 */
-    opacity: 1;
-    overflow: hidden;
-    border-radius: 32px;
+    opacity: 1; 
+    overflow: hidden; 
+    border-radius: 32px; 
   }
+  .avatar img {
+    width: 64px; 
+    height: 64px; 
+  }
+  .avatar .badge {
+    width: 16px; 
+    height: 16px; 
+    border-radius: 8px; 
+  }
+  .avatar.active .badge {
+    background: #000000FF; /* transparent */
+    opacity: 0; 
+    border-width: 1.5px; 
+    border-color: #FFFFFFFF; 
+  }
+  .avatar.inactive .badge {
+    background: #000000FF; /* transparent */
+    opacity: 0; 
+    border-width: 1.5px; 
+    border-color: #FFFFFFFF; 
+  }
+  .avatar.idle .badge {
+    background: #000000FF; /* transparent */
+    opacity: 0; 
+    border-width: 1.5px; 
+    border-color: #FFFFFFFF; 
+  }
+  .avatar.do_not_disturb .badge {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 16px; 
+    line-height: 16px; 
+    color: #FFFFFFFF; /* white */
+    background: #000000FF; /* transparent */
+    opacity: 0; 
+    border-width: 1.5px; 
+    border-color: #FFFFFFFF; 
+}
+.table {
+  display: flex;
+  padding: 10px;
+  margin-top: 85px; /* Added margin-top */
+  margin-bottom: 0px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left; /* Align text to the left */
+  padding: 8px;
+  vertical-align: middle; /* Align text vertically in the middle */
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+td img {
+  max-width: 50px; /* Adjust the size of the image */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Center the image within the cell */
+}
+.table h4 {
+  flex: 1;
+  text-align: center;
+  padding: 15px;
+  margin: 0;
+  background: #F5F5F5;
+}
+
+.button_Img {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+#addProductBtn {
+  margin-top: 10px;
+  position: absolute;
+  left: 135px;
+  background: #d8dcd8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+#addProductBtn:hover
+{
+  font-weight: 700;
+  color: #768676;
+  background: #E6FFE6;
+}
+
+.deleteProduct{
+  margin-top: 10px;
+  position: absolute;
+  left: 220px;
+  background: #d8dcd8;
+  color: white;
+  border: none;
+  padding: 10px 17px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.deleteProduct:hover
+{
+  font-weight: 700;
+  color: #768676;
+  background: #E6FFE6;
+}
+
+#productForm {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 590px;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+h3
+{
+  margin-bottom: 20px;
+  font-family: Catamaran; /* Body */
+  font-size: 20px; 
+  line-height: 30px; 
+  font-weight: 600; 
+  color: #005500FF; /* primary-500 */
+}
+h2
+{
+  margin-bottom: -15px;
+}
+
+.modal-content {
+  display: absolute;
+  flex-direction: column;
+}
+
+.form-section {
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+
+/* Adjusting the layout of the icon upload */
+.icon-upload {
+  margin-bottom: -10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-upload button {
+  background: #005500;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+#cancelBtn
+{
+    background-color: #f44336;
+}
+
+.form-buttons button {
+  background: #005500;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+
+.product-table {
+  margin-left: 20px;
+  width: 98%;
+  border: none;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+
+.product-table th {
+  background-color: #f5f5f5;
+  padding: 10px;
+  text-align: left;
+  font-weight: bold;
+  color: #333;
+}
+
+.product-table td {
+
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.product-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.product-table tr:hover {
+  background-color: #e6e6e6;
+}
+
+.product-table .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.product-table .quantity {
+  text-align: right;
+}
+
+.product-table .price {
+  text-align: right;
+  font-weight: bold;
+}
+
+.icon-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#iconPreview {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.icon-upload {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+  position: relative;
+}
+
+.icon-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.icon-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #005500;
+  cursor: pointer;
+}
+
+#productTable {
+  width: 100%;
+  border-collapse: collapse; /* Ensure borders are collapsed */
+}
+
+#productTable, #productTable th, #productTable td {
+  border: none; /* Remove all borders */
+}
+
+#productTable th, #productTable td {
+  padding: 8px;
+  text-align: left; /* Align text to the left */
+}
+
+#productTable img {
+  max-width: 80px;
+  max-height: 80px;
+  object-fit: cover;
+}
+
+
+
+
+.textbox input:hover {
+  color: #171A1FFF; /* neutral-900 */
+  background: #F3F4F6FF; /* neutral-200 */
+}
+/* focused */
+.textbox input:focused {
+  color: #171A1FFF; /* neutral-900 */
+  background: #FFFFFFFF; /* white */
+}
+/* disabled */
+.textbox input:disabled {
+  color: #171A1FFF; /* neutral-900 */
+  background: #F3F4F6FF; /* neutral-200 */
+}
+.textbox input {
+  width: 230px; 
+  height: 36px; 
+  padding-left: 12px; 
+  padding-right: 12px; 
+  font-family: Catamaran; 
+  font-size: 14px; 
+  line-height: 22px; 
+  font-weight: 400; 
+  background: #F3F4F6FF; /* neutral-200 */
+  border-radius: 4px; /* border-xl */
+  border-width: 0px; 
+  outline: none; 
+}
+.textbox .label {
+  font-family: Catamaran; 
+  font-size: 14px; 
+  line-height: 22px; 
+  font-weight: 700; 
+}
+/* hover */
+.textbox input:hover {
+  color: #171A1FFF; /* neutral-900 */
+  background: #F3F4F6FF; /* neutral-200 */
+}
+/* focused */
+.textbox input:focused {
+  color: #171A1FFF; /* neutral-900 */
+  background: #FFFFFFFF; /* white */
+}
+/* disabled */
+.textbox input:disabled {
+  color: #171A1FFF; /* neutral-900 */
+  background: #F3F4F6FF; /* neutral-200 */
+}
+.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+  fill: #171A1FFF; /* neutral-900 */
+}
