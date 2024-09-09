@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="invent_styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="client.js"></script>
+</head>
+<body class="page">
+    <div class="sidebar-menu">
+        <div class="sidebar-1"></div>
+        <div class="sidebar-2"></div>
+        <div class="sidebar-3"></div>
+        <img src="resources/mnc_logo.png" alt="Mother & Child Logo" class="logo">
+        <span class="main-text">Mother & Child</span>
+        <small class="sub-text">Pharmacy & Medical Supplies</small>
+
+        
+        <ul class="sidebar-menu">
+            <li class="sidebar-menu-item">
+                <a href="#">
+                    <img src="resources/dashboard_icon.png" alt="Dashboard Icon" class="sidebar-icon">
+                    Dashboard
+                </a>
+            </li>
+            <li class="sidebar-menu-item">
+                <a href="/../Mother&Child Pharmacy/Product/Product.html">
+                    <img src="resources/products.png" alt="Products Icon" class="sidebar-icon">
+                    Products
+                </a>
+            </li>
+            <li class="sidebar-menu-item">
+                <a href="#">
+                    <img src="resources/suppliers.png" alt="Suppliers Icon" class="sidebar-icon">
+                    Suppliers
+                </a>
+            </li>
+            <li class="sidebar-menu-item">
+                <a href="#">
+                    <img src="resources/transactions.png" alt="Transactions Icon" class="sidebar-icon">
+                    Transactions
+                </a>
+            </li>
+            <li class="sidebar-menu-item selected">
+                <a href="#">
+                    <img src="resources/inventory_active.png" alt="Inventory Icon" class="sidebar-icon">
+                    Inventory
+                </a>
+            </li>
+            <li class="sidebar-menu-item">
+                <a href="#">
+                    <img src="resources/pos.png" alt="POS Icon" class="sidebar-icon">
+                    POS
+                </a>
+            </li>
+            <li class="sidebar-menu-item">
+                <a href="#">
+                    <img src="resources/accounts.png" alt="Accounts Icon" class="sidebar-icon">
+                    Accounts
+                </a>
+            </li>
+            <li class="sidebar-menu-item">
+                <a href="#">
+                    <img src="resources/logout.png" alt="Logout Icon" class="sidebar-icon">
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="dash-info">
+        <h1 class="dash_text">Inventory</h1>
+        <button class="button" id="btn_PO">Create Purchase Order</button>
+        <span class="user-name">Aileen Castro (Admin)</span>
+        <img src="resources/I1.jpg" alt="Aileen Castro" class="avatar">
+    </div>
+
+    <div id="PurchaseForm" class="modal">
+        <div class="modal-content">
+
+            <h2>Create New Purchase Order</h2>
+            
+            <button class="close" id="closeBtn">&times;</button>
+            <hr>
+            <div class="form-section" form action="includes/formhandler.inc.php" method="post">
+                <h3 class="h3" >Product Information</h3>
+                <div class="textbox">
+                    <label style="margin-right: 195px;" for="Brand_Name">Brand Name</label>
+                    <label style="margin-right: 5px;" for="Generic_Name">Generic Name</label>
+                </div>
+                    
+                <div class="textbox">
+                    <input style="margin-right: 55px;" type="text" id="Brand_Name" name="Brand_Name">
+                    <input type="text" id="Generic_Name" name="Generic_Name">
+                </div>
+
+                <div>
+                    <label style="margin-right: 190px;" for="productCode">Product Code</label>
+                    <label for="Quantity">Quantity (No. of Boxes)</label>
+                </div>
+                <div class="textbox">
+                    <input style="margin-right: 55px;" type="text" id="productCode" name="productCode">
+                    <input type="Quantity" id="Quantity" name="Quantity">
+                </div>
+                
+
+            <hr style="margin-top: 30px;">
+
+                
+            <div class="form-section">
+                <h3 class="h3" >Supplier Information</h3>
+                <div class="textbox">
+                    <label style="margin-right: 182px;" for="SupplierName">Supplier Name</label>
+                    <label for="SupplierAddress">Supplier Email</label>
+                </div>
+    
+                <div class="textbox">
+                    
+                    <input style="margin-right: 55px;" type="text" id="SupplierName" name="SupplierName" >
+                    <input type="text" id="SupplierAddress" name="SupplierAddress" >
+                </div>
+    
+                <div class="textbox">
+                    <label style="margin-right: 170px;" for="ContactNumber">Contact Number</label>
+                    
+                    
+                </div>
+    
+                <div class="textbox">
+                    <input style="margin-right: 55px;" type="text" id="ContactNumber" name="ContactNumber">
+                    
+                </div>
+            </div>
+      
+          
+            <div style="margin-top: 30px;" class="form-button">
+                <button id="cancelBtn">Clear</button>
+                <button id="saveBtn">Save</button>
+            </div>
+
+
+
+
+
+
+
+
+
+               
+
+                    
+               
+            </div>
+
+
+            <script>
+                // Get the modal
+                var modal = document.getElementById("PurchaseForm");
+
+                // Get the button that opens the modal
+                var btn = document.getElementById("btn_PO");
+
+                // Get the close button
+                var closeBtn = document.getElementById("closeBtn");
+
+                // Get the clear button
+                var clearBtn = document.getElementById("cancelBtn");
+
+                // When the user clicks the button, open the modal
+                btn.onclick = function() {
+                    modal.style.display = "block";
+                }
+
+                // When the user clicks on the close button, close the modal
+                closeBtn.onclick = function() {
+                    modal.style.display = "none";
+                }
+
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+
+                // Clear form function
+                function clearForm() {
+                    var inputs = document.querySelectorAll('#PurchaseForm input');
+                    inputs.forEach(function(input) {
+                        input.value = ''; // Clear the value of each input
+                    });
+                }
+
+                // When the user clicks the clear button, clear the form
+                clearBtn.onclick = function() {
+                    clearForm();
+                }
+                
+
+            </script>
+</body>
+
+</html>
+
+
