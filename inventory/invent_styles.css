@@ -1,738 +1,542 @@
-body {
-  font-family: 'Catamaran', sans-serif;
-}
-
-.logo {
-  position: absolute;
-  top: 26px;
-  left: 20px;
-  width: 36px;
-  height: 36px;
-  border-radius: 0px;
-}
-
-.main-text {
-  position: absolute;
-  top: 24px;
-  left: 72px;
-  width: 164px;
-  height: 28px;
-  font-family: Catamaran;
-  font-size: 18px;
-  line-height: 28px;
-  font-weight: 700;
-  color: #EB1C24FF; /* secondary-500 */
-}
-
-.sub-text {
-  position: absolute;
-  top: 52px;
-  left: 72px;
-  width: 164px;
-  height: 20px;
-  font-family: Catamaran;
-  font-size: 12px;
-  line-height: 20px;
-  font-weight: 400;
-  color: #005500FF; /* primary-500 */
-}
-
-.sidebar {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 258px;
-  height: 315px;
-  background: #FFFFFFFF; /* white */
-  border-radius: 0px;
-  box-shadow: 0px .2px 0px #171a1f;
-}
-
-.sidebar-1 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 258px;
-  height: 475px;
-  border-radius: 0px;
-  box-shadow: 0px .2px 0px #171a1f;
-}
-
-.sidebar-2 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 258px;
-  height: 585px;
-  border-radius: 0px;
-  box-shadow: 0px .2px 0px #171a1f;
-}
-
-.sidebar-3 {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 258px;
-  height: 1080px;
-  border-radius: 0px;
-  box-shadow: 0px 0px 1px #171a1f;
-}
-
-.sidebar-menu {
-  position: absolute; 
-  top: 84px; 
-  right: 91px;
-  height: 184px; 
-  display: flex; 
-  flex-direction: column; 
-  font-family: Catamaran; /* Body */
-  font-size: 14px; 
-  line-height: 22px; 
-  font-weight: 400; 
-  opacity: 1; 
-  background: rgba(255, 255, 255, 0); /* Transparent background */
-}
-
-.sidebar-menu-item .sidebar-icon {
-  margin-top: -5px; 
-}
-
-.sidebar-menu-item {
-  position: relative; /* Needed for the indicator positioning */
-  display: flex;
-  align-items: center;
-  padding: 16px;
-  color: #565D6DFF; /* neutral-600 */
-  background: rgba(255, 255, 255, 0); /* Transparent background */
-  border-radius: 0px;
-  gap: 12px; /* Space between icon and text */
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.sidebar-menu-item a {
-  display: flex; /* Ensure anchor tag uses flexbox */
-  align-items: center; /* Center items vertically */
-  text-decoration: none;
-  color: inherit;
-  gap: 8px; /* Space between icon and text */
-}
-
-.sidebar-menu-item.selected {
-  font-weight: 700;
-  color: #005500FF; /* primary-500 */
-  background: #FFFFFF; /* transparent */
-}
-
-.sidebar-menu-item.selected:hover:active {
-  color: #005500FF; /* primary-500 */
-  background: #FFFFFF; /* transparent */
-}
-
-.sidebar-menu-item .indicator {
-  position: absolute;
-  left: 0; /* Position indicator on the leftmost side */
-  width: 4px; 
-  height: 80%;
-  opacity: 0; /* Hide by default */
-}
-
-.sidebar-menu-item.selected .indicator {
-  opacity: 1; /* Show only for selected item */
-}
-
-
-.dash-info {
-  position: absolute;
-  top: 0px;
-  left: 259px;
-  width: 1150px;
-  height: 84px;
-  background: #FFFFFFFF;
-  /* white */
-  border-radius: 0px;
-  box-shadow: 0px 0px 1px #171a1f, 0px 0px 2px #171a1f;
-  /* shadow-xs */
-  max-width: 1440px;
-}
-.dash_text {
-  position: absolute;
-  left: 22px;
-  font-family: Catamaran;
-  font-size: 25px;
-  line-height: 48px;
-  font-weight: 700;
-  color: #171A1FFF;
-  /* neutral-900 */
-}
-
-
-.user-name {
-  position: absolute;
-  top: 27px;
-  left: 925px;
-  font-family: Catamaran;
-  font-size: 15px;
-  line-height: 30px;
-  font-weight: 400;
-  color: #171A1FFF; /* neutral-900 */
-}
-
-.avatar {
-  position: absolute;
-  top: 15px;
-  left: 1090px;
-  width: 50px;
-  height: 50px;
-  background: #86FF86FF;
-  /* primary-200 */
-  opacity: 1;
-  overflow: hidden;
-  border-radius: 32px;
-}
-
 .Create_PO {
-  position: absolute; 
-  top: 100px; 
-  left: 25px; 
-  height: 36px; 
-  padding: 0 12px; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  font-family: Catamaran; 
-  font-size: 14px; 
-  line-height: 22px; 
-  font-weight: 400; 
-  color: #FFFFFFFF; /* white */
-  background: #005500FF; /* primary-500 */
-  opacity: 1; 
-  border: none; 
-  border-radius: 2px; /* border-m */
-}
-/* Hover */
-.Create_PO:hover {
-  color: #FFFFFFFF; /* white */
-  background: #004200FF; /* primary-650 */
-}
+    height: 36px; 
+    padding: 0 12px; 
+    font-size: 14px; 
+    line-height: 22px; 
+    font-weight: 400; 
+    color: #FFFFFFFF; /* white */
+    background: #005500FF; /* primary-500 */
+    opacity: 1; 
+    border: none; 
+    border-radius: 2px; /* border-m */
+  }
 
-/* Pressed */
-.Create_PO:hover:active {
-  color: #FFFFFFFF; /* white */
-  background: #002D00FF; /* primary-800 */
-}
-
-/* Disabled */
-.Create_PO:disabled {
-  opacity: 0.4; 
-}
-
-
-.deleteProduct{
-  top: 100px; 
-  position: absolute;
-  left: 190px;
-  height: 36px; 
-  background-color: #f44336;
-  padding: 0 12px;
-  color: white;
-  border: none;
-  padding: 10px 17px;
-  font-family: Catamaran; 
-  font-size: 14px; 
-  line-height: 22px; 
-  font-weight: 400; 
-  cursor: pointer;
-  opacity: 1; 
-  border: none; 
-  border-radius: 2px; /* border-m */
-}
-.deleteProduct:hover
-{
-  color: #FFFFFFFF; /* white */
-  background: #b8342b; /* primary-650 */
+  .deleteProduct{
+   
+    height: 36px; 
+    padding: 0 12px; 
+    font-size: 14px; 
+    line-height: 22px; 
+    font-weight: 400; 
+    color: #FFFFFFFF; /* white */
+    background: #b8342b; /* primary-500 */
+    opacity: 1; 
+    border: none; 
+    border-radius: 2px; /* border-m */
+  }
+  #updateProduct
+  {
+   
+    height: 36px; 
+    padding: 0 12px; 
+    font-size: 14px; 
+    line-height: 22px; 
+    font-weight: 400; 
+    color: #FFFFFFFF; /* white */
+    background: #243d8f; /* primary-500 */
+    opacity: 1; 
+    border: none; 
+    border-radius: 2px; /* border-m *//
+  }
   
-}
+  /* Hover */
+  .Create_PO:hover {
+    color: #FFFFFFFF; /* white */
+    background: #004200FF; /* primary-650 */
+  }
+  
+  /* Pressed */
+  .Create_PO:hover:active {
+    color: #FFFFFFFF; /* white */
+    background: #002D00FF; /* primary-800 */
+  }
+  
+  /* Disabled */
+  .Create_PO:disabled {
+    opacity: 0.4; 
+  }
+  
+  
+ 
+  .deleteProduct:hover
+  {
+    color: #FFFFFFFF; /* white */
+    background: #aa3128; /* primary-650 */
+    
+  }
+  
+  #updateProduct:hover{
+    color: #FFFFFFFF; /* white */
+    background: #203780; /* primary-800 */
+  }
+  
+  /* Disabled */
+  #updateProduct:disabled {
+    opacity: 0.4; 
+  }
+/*End of Buttons*/
 
-#updateProduct
-{
-  top: 100px; 
-  position: absolute;
-  left: 270px;
-  height: 36px; 
-  background-color: #4764c2;
-  padding: 0 12px;
-  color: white;
-  border: none;
-  padding: 10px 17px;
-  font-family: Catamaran; 
-  font-size: 14px; 
-  line-height: 22px; 
-  font-weight: 400; 
-  cursor: pointer;
-  opacity: 1; 
-  border: none; 
-  border-radius: 2px; /* border-m */
-}
-#updateProduct:hover{
-  color: #FFFFFFFF; /* white */
-  background: #243d8f; /* primary-800 */
-}
+/*FORM MODAL*/
 
-/* Disabled */
-#updateProduct:disabled {
-  opacity: 0.4; 
-}
 
 
 #PurchaseForm {
   
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  border: 1px solid #ddd;
-  padding: 20px;
-  z-index: 100;
-}
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed;
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-.modal-content {
-  position: relative;
-  background: #fff;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 80%; /* Responsive width */
-  max-width: 500px; /* Max width for large screens */
-  top: 50%; /* Center vertically */
-  transform: translateY(-50%); /* Adjust for vertical centering */
-}
-
-/* Close Button */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 20px;
+    z-index: 100;
+  }
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  .modal-content {
+    position: relative;
+    background: #fff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 80%; /* Responsive width */
+    max-width: 500px; /* Max width for large screens */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+  }
+  /* Close Button */
 #close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+    color: #aaa;
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
 }
-
-#close:hover,
-#close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+  
+#close:hover, #close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
+/* End close*/
 
-.h3 {
-  font-family: Catamaran; /* Body */
-  font-size: 20px; 
-  line-height: 30px; 
-  font-weight: 600; 
-  color: #005500FF; /* primary-500 */
-}
+/*SEARCHBOX*/
+.searchbox {
+    position: absolute;
+    top: 105px;
+    right: 0.5%;
+    opacity: 1;
+  }
+  
+  .searchbox input {
+    width: 347px;
+    height: 30px;
+    padding-left: 34px;
+    padding-right: 12px;
+    font-family: Catamaran;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+    background: #F3F4F6FF;
+    /* neutral-200 */
+    border-radius: 3px;
+    /* border-l */
+    border-width: 0px;
+    outline: none;
+  }
+  .searchbox svg {
+    position: absolute;
+    top: 7px;
+    right: 12px;
+    width: 16px;
+    height: 16px;
+    fill: #171A1FFF;
+    /* neutral-900 */
+  }
+  
+  .searchbox svg.left {
+    left: 12px;
+  }
+  
+  /* focused */
+  .searchbox input:focused {
+    color: #BDC1CAFF;
+    /* neutral-400 */
+    background: #FFFFFFFF;
+    /* white */
+  }
+  
+  /* disabled */
+  .searchbox input:disabled {
+    color: #BDC1CAFF;
+    /* neutral-400 */
+    background: #F3F4F6FF;
+    /* neutral-200 */
+  }
+  
+  .searchbox :disabled+.icon,
+  .textbox :disabled+.icon+.icon {
+    fill: #171A1FFF;
+    /* neutral-900 */
+  }
 
-
-/* Form Buttons */
+  /*END OF SEARCHBOX*/
+  
+  .h3 {
+    font-family: Catamaran; /* Body */
+    font-size: 20px; 
+    line-height: 30px; 
+    font-weight: 600; 
+    color: #005500FF; /* primary-500 */
+  }
+  
+  /* Form Buttons */
 .form-button button {
-  width: 500px; 
-  height: 36px; 
-  padding: 0 12px; 
-  display: flex;
-  padding: 0px 12px;
-  border: none;
-  cursor: pointer;
-  color: #fff;
-  font-family: Catamaran; 
-  font-size: 14px; 
-  line-height: 22px; 
-  font-weight: 400; 
-  color: #FFFFFFFF; /* white */
-  background: #005500FF; /* primary-500 */
-  opacity: 1; 
-  border: none; 
-  border-radius: 4px; 
-  align-items: center; 
-  justify-content: center;
-}
-
-.form-button #Clear {
-  background-color: #f44336;
-}
-
-.form-button #saveBtn {
-  background-color: #4CAF50;
-}
-.form-button {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-}
-
-.textbox input:hover {
-  color: #171A1FFF; /* neutral-900 */
-  background: #F3F4F6FF; /* neutral-200 */
-}
-/* focused */
-.textbox input:focused {
-  color: #171A1FFF; /* neutral-900 */
-  background: #FFFFFFFF; /* white */
-}
-/* disabled */
-.textbox input:disabled {
-  color: #171A1FFF; /* neutral-900 */
-  background: #F3F4F6FF; /* neutral-200 */
-}
-.textbox input {
-  width: 200px; 
-  height: 36px; 
-  padding-left: 12px; 
-  padding-right: 12px; 
-  font-family: Catamaran; 
-  font-size: 14px; 
-  line-height: 22px; 
-  font-weight: 400; 
-  background: #F3F4F6FF; /* neutral-200 */
-  border-radius: 4px; /* border-xl */
-  border-width: 0px; 
-  outline: none; 
-}
-.textbox .label {
-  font-family: Catamaran; 
-  font-size: 14px; 
-  line-height: 22px; 
-  font-weight: 700; 
-}
-/* hover */
-.textbox input:hover {
-  color: #171A1FFF; /* neutral-900 */
-  background: #F3F4F6FF; /* neutral-200 */
-}
-/* focused */
-.textbox input:focused {
-  color: #171A1FFF; /* neutral-900 */
-  background: #FFFFFFFF; /* white */
-}
-/* disabled */
-.textbox input:disabled {
-  color: #171A1FFF; /* neutral-900 */
-  background: #F3F4F6FF; /* neutral-200 */
-}
-.textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
-  fill: #171A1FFF; /* neutral-900 */
-}
-.close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
-  font-weight: bold;
-  color: #aaa;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-.close:hover {
-  color: black;
-  text-decoration: none;
-}
+    width: 500px; 
+    height: 36px; 
+    padding: 0 12px; 
+    display: flex;
+    padding: 0px 12px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-family: Catamaran; 
+    font-size: 14px; 
+    line-height: 22px; 
+    font-weight: 400; 
+    color: #FFFFFFFF; /* white */
+    background: #005500FF; /* primary-500 */
+    opacity: 1; 
+    border: none; 
+    border-radius: 4px; 
+    align-items: center; 
+    justify-content: center;
+  }
+  
+  .form-button #Clear {
+    background-color: #f44336;
+  }
+  
+  .form-button #saveBtn {
+    background-color: #4CAF50;
+  }
+  .form-button {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .textbox input:hover {
+    color: #171A1FFF; /* neutral-900 */
+    background: #F3F4F6FF; /* neutral-200 */
+  }
+  /* focused */
+  .textbox input:focused {
+    color: #171A1FFF; /* neutral-900 */
+    background: #FFFFFFFF; /* white */
+  }
+  /* disabled */
+  .textbox input:disabled {
+    color: #171A1FFF; /* neutral-900 */
+    background: #F3F4F6FF; /* neutral-200 */
+  }
+  .textbox input {
+    width: 200px; 
+    height: 36px; 
+    padding-left: 12px; 
+    padding-right: 12px; 
+    font-family: Catamaran; 
+    font-size: 14px; 
+    line-height: 22px; 
+    font-weight: 400; 
+    background: #F3F4F6FF; /* neutral-200 */
+    border-radius: 4px; /* border-xl */
+    border-width: 0px; 
+    outline: none; 
+  }
+  .textbox .label {
+    font-family: Catamaran; 
+    font-size: 14px; 
+    line-height: 22px; 
+    font-weight: 700; 
+  }
+  /* hover */
+  .textbox input:hover {
+    color: #171A1FFF; /* neutral-900 */
+    background: #F3F4F6FF; /* neutral-200 */
+  }
+  /* focused */
+  .textbox input:focused {
+    color: #171A1FFF; /* neutral-900 */
+    background: #FFFFFFFF; /* white */
+  }
+  /* disabled */
+  .textbox input:disabled {
+    color: #171A1FFF; /* neutral-900 */
+    background: #F3F4F6FF; /* neutral-200 */
+  }
+  .textbox :disabled + .icon, .textbox :disabled + .icon + .icon {
+    fill: #171A1FFF; /* neutral-900 */
+  }
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #aaa;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: black;
+    text-decoration: none;
+  }
+  
+  /*End of overlay*/
 
 /***************************************PRODUCT TABLE*****************************/
 
 table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        tr:hover {
-            background-color: #f1f1f1;
-        }
-        
-        
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f4f4f4;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+
 .table_product {
-  display: absolute;
-  flex-direction: column;
-  margin-top: 55px;
-  position: absolute;
-  width: 80%;
-  top: 80px;
-  left: 281px;
-  height: 10%;
-  opacity: 1;
-  border-radius: 3px;
-  border-collapse: collapse;
+margin-left: 30px;
+display: absolute;
+flex-direction: column;
+margin-top: 100px;
+position: absolute;
+width: 80%;
+top: 80px;
+left: 281px;
+height: 10%;
+opacity: 1;
+border-radius: 3px;
+border-collapse: collapse;
 }
 th.col1, td.col1 {
-  width: 7%;
+width: 7%;
 }
 
 th.col2, td.col2 {
-  width: 23%;
+width: 23%;
 }
 
 th.col2pic, td.col2pic {
-  width: 2%;
+width: 2%;
 }
 
 th.col2name, td.col2name {
-  width: 20.27%;
+width: 20.27%;
 }
 
 th.col3, td.col3 {
-  width: 16%;
+width: 16%;
 }
 
 th.col4, td.col4 {
-  width: 14%;
+width: 14%;
 }
 
 th.col5, td.col5 {
-  width: 15%;
+width: 15%;
 }
 
 th.col6, td.col6 {
-  width: 10%;
+width: 10%;
 }
 
 th.col7, td.col7 {
-  width: 10%;
-  text-align: center;
+width: 10%;
+text-align: center;
 }
 
 th {
-  height: 50px;
-  text-align: left;
-  font-family: Catamaran;
-  font-size: 14px;
-  font-weight: 600;
-  color: #565D6DFF;
+height: 50px;
+text-align: left;
+font-family: Catamaran;
+font-size: 14px;
+font-weight: 600;
+color: #565D6DFF;
 }
 
 td {
-  height: 50px;
-  font-family: Catamaran;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 400;
-  color: #171A1FFF;
+height: 50px;
+font-family: Catamaran;
+font-size: 14px;
+line-height: 22px;
+font-weight: 400;
+color: #171A1FFF;
 }
 
 .highlight-row {
-  background-color: #f4f4f4;
+background-color: #f4f4f4;
 }
 
 .selected {
-  background-color: #cfe2ff;
-}
-/*SEARCH**********************/
-.searchbox {
-  position: absolute;
-  top: 105px;
-  right: 0.5%;
-  opacity: 1;
+background-color: #cfe2ff;
 }
 
-.searchbox input {
-  width: 347px;
-  height: 30px;
-  padding-left: 34px;
-  padding-right: 12px;
-  font-family: Catamaran;
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 400;
-  background: #F3F4F6FF;
-  /* neutral-200 */
-  border-radius: 3px;
-  /* border-l */
-  border-width: 0px;
-  outline: none;
-}
-.searchbox svg {
-  position: absolute;
-  top: 7px;
-  right: 12px;
-  width: 16px;
-  height: 16px;
-  fill: #171A1FFF;
-  /* neutral-900 */
-}
+/***************************************PRODUCT TABLE*****************************/
 
-.searchbox svg.left {
-  left: 12px;
-}
-
-/* focused */
-.searchbox input:focused {
-  color: #BDC1CAFF;
-  /* neutral-400 */
-  background: #FFFFFFFF;
-  /* white */
-}
-
-/* disabled */
-.searchbox input:disabled {
-  color: #BDC1CAFF;
-  /* neutral-400 */
-  background: #F3F4F6FF;
-  /* neutral-200 */
-}
-
-.searchbox :disabled+.icon,
-.textbox :disabled+.icon+.icon {
-  fill: #171A1FFF;
-  /* neutral-900 */
-}
-
+/*NOTIFICATION AND OTHER STUFF*/
 
 /* Notification container */
 .notification {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1001; /* Sit on top */
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%); /* Center the notification */
-  background-color: #fefefe;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 300px; /* Set the width of the notification */
- 
-  border-radius: 8px;
-  text-align: center;
-}
-
-/* Notification message */
-#notificationMessage {
-  margin: 0;
-  font-size: 14px;
-  padding: 5px;
-}
-
-/* Close button for notification */
-#closeNotification {
-  background-color: rgb(0, 75, 0); /* Gray */
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin-top: 10px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-#closeNotification:hover {
-  background-color: rgb(0, 59, 0);
-}
-
-
-.Delnotification {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.Delnotification-content {
-  background: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  text-align: center;
-}
-
-.Delnotification button {
-  margin: 5px;
-}
-
-* Overlay Styling */
-.overlay {
     display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Center the notification */
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px; /* Set the width of the notification */
+   
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  /* Notification message */
+  #notificationMessage {
+    margin: 0;
+    font-size: 14px;
+    padding: 5px;
+  }
+  
+  /* Close button for notification */
+  #closeNotification {
+    background-color: rgb(0, 75, 0); /* Gray */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  #closeNotification:hover {
+    background-color: rgb(0, 59, 0);
+  }
+  
+  
+  .Delnotification {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-    z-index: 999; /* Just below the modal */
-}
-
-/* Delete Modal Styling */
-.deleteModal {
-  display: none;
-  position: fixed; /* Use fixed to keep it centered in the viewport */
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Adjust for exact center */
-  width: 327px; 
-  height: 139px; 
-  background: #FFFFFF; /* white */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   
-  z-index: 1000; /* Ensure it's on top of other content */
-}
-
-/* Modal Content Styling */
-
-/* Close Button Styling */
-.closeBtn {
-    position: absolute; 
-    top: 10px; 
-    right: 10px; 
-    font-size: 20px; 
-    cursor: pointer;
-}
-
-/* Button Styling */
-.modal-content button {
-    margin: 10px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-#confirmDeleteBtn {
-    background: #005500FF; /* Bootstrap danger color */
-    color: #fff;
-}
-
-#cancelDeleteBtn {
-    background: #f44336; /* Bootstrap info color */
-    color: #fff;
-}
-
-
-.currency {
-  font-family: 'Catamaran', sans-serif;
-}
+  .Delnotification-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .Delnotification button {
+    margin: 5px;
+  }
+  
+  * Overlay Styling */
+  .overlay {
+      display: none; /* Hidden by default */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+      z-index: 999; /* Just below the modal */
+  }
+  
+  /* Delete Modal Styling */
+  .deleteModal {
+    display: none;
+    position: fixed; /* Use fixed to keep it centered in the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for exact center */
+    width: 327px; 
+    height: 139px; 
+    background: #FFFFFF; /* white */
+    
+    z-index: 1000; /* Ensure it's on top of other content */
+  }
+  
+  /* Modal Content Styling */
+  
+  /* Close Button Styling */
+  .closeBtn {
+      position: absolute; 
+      top: 10px; 
+      right: 10px; 
+      font-size: 20px; 
+      cursor: pointer;
+  }
+  
+  /* Button Styling */
+  .modal-content button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 16px;
+  }
+  
+  #confirmDeleteBtn {
+      background: #005500FF; /* Bootstrap danger color */
+      color: #fff;
+  }
+  
+  #cancelDeleteBtn {
+      background: #f44336; /* Bootstrap info color */
+      color: #fff;
+  }
+  
+  
+  .currency {
+    font-family: 'Catamaran', sans-serif;
+  }
+  /*NOTIFICATION AND OTHER STUFF*/
+  
