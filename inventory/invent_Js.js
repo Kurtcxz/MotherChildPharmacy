@@ -40,24 +40,22 @@ btn.onclick = function() {
         });
 };
 
-
-
-
-// Get the Clear button
 var clearBtn = document.getElementById("Clear");
 
-// Clear button functionality
-var clearBtn = document.getElementById("Clear");
 clearBtn.onclick = function() {
-    document.getElementById('PurchaseForm').reset(); // Reset the form
-    document.getElementById('iconPreview').src = '../resources/default_icon.png'; // Reset icon preview
+    var form = document.getElementById('PurchaseForm');
+    Array.from(form.elements).forEach(element => {
+        if (element.id !== 'itemID' && element.id !== 'iconFile') {
+            if (element.type === 'text' || element.type === 'number' || element.type === 'select-one') {
+                element.value = ''; 
+            }
+        }
+    });
 };
 closeBtn.onclick = function() {
     formClosedWithoutSubmission = true; // Set the flag to indicate form was closed without submission
     modal.style.display = "none";
 }
-
-
 
 // Function to validate required fields
 
@@ -911,16 +909,23 @@ function closeEditOverlay() {
     }
 }
 
+function showProductDropdown() {
+    const dropdown = document.getElementById('productSelect');
+    dropdown.style.display = 'block'; // Show the dropdown when the input is clicked
+    fetchAllProducts(); // Fetch all products to show in the dropdown
+}
+
 function filterOptions() {
     const input = document.getElementById('selectProd');
     const filter = input.value.toLowerCase();
     const dropdown = document.getElementById('productSelect');
     dropdown.innerHTML = ''; // Clear previous options
-    dropdown.style.display = 'none'; // Initially hide the dropdown
 
     // Clear ordered amount field if the input is empty
     if (filter === '') {
         resetOrderedField(); // Ensure this function resets the new field
+        resetQuantityRemainingField();
+        clearLot();
         return; // Stop function if input is empty
     }
 
@@ -933,6 +938,7 @@ function filterOptions() {
                 const products = JSON.parse(xhr.responseText);
                 const MAX_LENGTH = 50;
 
+                dropdown.innerHTML = ''; // Clear previous options
                 if (products.length > 0) {
                     const defaultOption = document.createElement('div');
                     defaultOption.classList.add('option');
@@ -967,6 +973,48 @@ function filterOptions() {
     xhr.send();
 }
 
+function fetchAllProducts() {
+    const dropdown = document.getElementById('productSelect');
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', `goodIssueGetData.php?query=`, true); // Adjust the URL as needed
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            const products = JSON.parse(xhr.responseText);
+            const MAX_LENGTH = 50;
+
+            dropdown.innerHTML = ''; // Clear previous options
+            if (products.length > 0) {
+                const defaultOption = document.createElement('div');
+                defaultOption.classList.add('option');
+                defaultOption.textContent = 'Select a product';
+                defaultOption.onclick = () => {
+                    const input = document.getElementById('selectProd');
+                    input.value = ''; // Clear input if default is clicked
+                    dropdown.style.display = 'none';
+                    resetOrderedField(); // Reset ordered field on clear
+                };
+                dropdown.appendChild(defaultOption);
+
+                products.forEach(product => {
+                    const option = document.createElement('div');
+                    option.classList.add('option');
+                    option.dataset.value = product.ItemID; // Store the ItemID
+                    const displayText = `${product.GenericName} ${product.BrandName} (${product.Mass} ${product.UnitOfMeasure})`;
+                    option.textContent = displayText.length > MAX_LENGTH 
+                        ? displayText.substring(0, MAX_LENGTH - 3) + '...' 
+                        : displayText;
+                    option.onclick = function() {
+                        selectProduct(option);
+                    };
+                    dropdown.appendChild(option);
+                });
+                dropdown.style.display = 'block'; // Show dropdown if results found
+            }
+        }
+    };
+    xhr.send();
+}
+
 
 // Product selection enabling lot input
 function selectProduct(option) {
@@ -980,6 +1028,12 @@ function selectProduct(option) {
 
     // Fetch product data and update ordered amount field
     fetchProductData(currentSelectedItemID);
+}
+
+
+
+function clearLot() {
+    document.getElementById('selectLot').value = ''; // Clear QuantityRemaining field
 }
 
 // LOT 
@@ -1065,9 +1119,6 @@ function selectLot(option) {
     // Set the currentLotNumber variable to the selected LotNumber
     currentLotNumber = option.dataset.value; // Store the selected LotNumber
     console.log(`Lot selected: ${currentLotNumber}, Quantity Remaining: ${quantityRemaining || 0}`);
-
-    // Optionally, fetch product data using the selected LotNumber if needed
-    // fetchProductData(currentLotNumber); // Uncomment if necessary
 }
 
 // Function to reset the QuantityRemaining field (not defined in your provided code)
